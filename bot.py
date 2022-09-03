@@ -25,6 +25,7 @@ async def on_message(message):
 
 @client.event
 async def on_member_join(member):
+    
     channel = client.get_channel(1015375154194436126)
     await channel.send(f'{member.mention} join')
 
@@ -32,10 +33,6 @@ async def on_member_join(member):
 async def on_member_remove(member):
     channel = client.get_channel(1015375154194436126)
     await channel.send(f'{member.mention} leave')
-
-
-async def ping(ctx):
-    await ctx.send(bot.latency)
-    
+   
 client.run(jdata['token'])
 
